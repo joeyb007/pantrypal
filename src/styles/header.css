@@ -1,0 +1,19 @@
+header{
+    display: flex;
+    font-family:'Inter';
+    justify-content: center;
+    align-items:center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    width: 100%;
+}
+#pantryPalLogo{
+    width: 4vh;
+    padding: 2vh 2vh;
+}
+
+#pantryPalTitle{
+    color:rgb(23, 23, 23);
+    font-weight:400;
+    font-size:4vh;
+}
