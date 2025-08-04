@@ -1,0 +1,56 @@
+.addIngredientForm{
+    margin-top: 15vh;
+    display: flex;
+    justify-content:center;
+    gap: 12px;
+}
+
+.addIngredientButton{
+    background-color: black;
+    color: white;
+    font-family: "Inter";
+    border-style: dotted;
+    border-radius: 8px;
+    width: 150px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+}
+
+.addIngredientButton::before{
+    content:"+";
+    margin-right: 10px;
+}
+
+.addIngredientButton:hover{
+    background-color: rgb(42, 41, 41);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.addIngredientForm > input{
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #D1D5DB;
+    border-width: 1px;
+    padding: 10px 10px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    min-width: 150px;
+    max-width: 400px;
+    font-family: "Inter";
+    transition: all 0.2s ease-in-out;
+}
+
+.addIngredientForm > input:focus{
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    border-color: #c0c6cb;
+
+}
+
+.addIngredientForm > input:hover{
+    border-color: #c0c6cb;
+}
