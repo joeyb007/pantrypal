@@ -1,15 +1,18 @@
 import "../styles/ingredientForm.css"
-
+import { useState } from 'react'
 function IngredientForm(){
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>){
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget)
-        const newIngredient = formData.get("ingredient")
+    const [ingredients, setIngredients] = useState<string[]>([])
+    
+    function addIngredient(formData: FormData){
+        const newIngredient = formData.get('ingredient')
+        if(typeof newIngredient === "string" && newIngredient !== ''){
+        setIngredients(prevIngredients => [...prevIngredients, newIngredient]
+        )}
     }
 
     return(
         <main>
-            <form onSubmit={handleSubmit} className='addIngredientForm'>
+            <form action={addIngredient} className='addIngredientForm'>
                 <input 
                 type='text'
                 placeholder='e.g. oregano' 
@@ -18,6 +21,9 @@ function IngredientForm(){
                 />
                 <button type='submit' className='addIngredientButton'>Add Ingredient</button>
             </form>
+            <ul>
+                {ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+            </ul>
         </main>
     )
 }
