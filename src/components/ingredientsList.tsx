@@ -1,6 +1,7 @@
 type IngredientsListProps = {
     ingredients: string[],
     getRecipe:  React.Dispatch<React.SetStateAction<boolean>>
+    generatedRecipeSectionRef: React.RefObject<HTMLDivElement | null>
 }
 
 function IngredientsList(props: IngredientsListProps){
@@ -11,7 +12,7 @@ function IngredientsList(props: IngredientsListProps){
                     {props.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
                 </ul>
                 {props.ingredients.length > 3 && <div id='bottomRecipeDiv'>
-                    <div>
+                    <div ref={props.generatedRecipeSectionRef}>
                         <h3 id='readyForRecipe'>Ready for a recipe?</h3>
                         <p id='generateRecipeParagraph'>Generate a recipe from your list of ingredients</p>
                     </div>
